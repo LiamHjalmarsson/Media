@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "services",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article",
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
     "description": ""
   },
   "options": {
@@ -18,28 +18,17 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
-    "published_date": {
-      "type": "date",
+    "icon": {
+      "type": "string",
       "required": true
     },
     "seo": {
-      "displayName": "Seo",
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"

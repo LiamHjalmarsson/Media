@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "projects",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article",
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
     "description": ""
   },
   "options": {
@@ -18,11 +18,11 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "cover": {
       "type": "media",
@@ -34,12 +34,10 @@
         "videos"
       ]
     },
-    "published_date": {
-      "type": "date",
-      "required": true
+    "client": {
+      "type": "string"
     },
     "seo": {
-      "displayName": "Seo",
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
