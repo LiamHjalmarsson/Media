@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_social_links",
+  "info": {
+    "displayName": "Social link"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "nuxt_icon": {
+      "type": "string"
+    }
+  }
+}
