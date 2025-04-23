@@ -32,6 +32,15 @@
     "site_name": {
       "type": "string",
       "required": true
+    },
+    "favicon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

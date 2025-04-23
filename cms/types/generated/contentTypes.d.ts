@@ -572,6 +572,8 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     default_seo: Schema.Attribute.Component<'seo.seo', false> &
       Schema.Attribute.Required;
+    favicon: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     gdpr: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
