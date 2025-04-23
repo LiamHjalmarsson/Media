@@ -23,6 +23,15 @@
     },
     "gdpr": {
       "type": "blocks"
+    },
+    "social_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-link"
+    },
+    "site_name": {
+      "type": "string",
+      "required": true
     }
   }
 }
