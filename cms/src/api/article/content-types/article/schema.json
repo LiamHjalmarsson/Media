@@ -48,6 +48,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subservice.subservice"
+    },
+    "content": {
+      "type": "blocks"
     }
   }
 }

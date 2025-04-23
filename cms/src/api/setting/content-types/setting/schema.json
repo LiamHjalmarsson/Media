@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "default_seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": true
+    },
+    "cookie_policy": {
+      "type": "blocks",
+      "required": true
+    },
+    "gdpr": {
+      "type": "blocks"
+    }
+  }
+}
