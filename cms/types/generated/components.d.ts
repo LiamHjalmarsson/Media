@@ -1,15 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface BlocksHero extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_heroes';
-  info: {
-    description: '';
-    displayName: 'Hero';
-    icon: 'apps';
-  };
-  attributes: {};
-}
-
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -57,7 +47,6 @@ export interface SeoSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'blocks.hero': BlocksHero;
       'elements.link': ElementsLink;
       'elements.social-link': ElementsSocialLink;
       'seo.seo': SeoSeo;
