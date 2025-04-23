@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
+    description: '';
     displayName: 'Article';
     pluralName: 'articles';
     singularName: 'article';
@@ -396,6 +397,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subservices: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subservice.subservice'
+    >;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -408,6 +413,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
+    description: '';
     displayName: 'Project';
     pluralName: 'projects';
     singularName: 'project';
@@ -432,6 +438,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
+    subservices: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subservice.subservice'
+    >;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -444,6 +454,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: '';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -466,6 +477,10 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
+    subservices: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subservice.subservice'
+    >;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -478,6 +493,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
 export interface ApiSubserviceSubservice extends Struct.CollectionTypeSchema {
   collectionName: 'subservices';
   info: {
+    description: '';
     displayName: 'Subservice';
     pluralName: 'subservices';
     singularName: 'subservice';
@@ -497,8 +513,33 @@ export interface ApiSubserviceSubservice extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Relation<'oneToOne', 'api::service.service'>;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    displayName: 'Tag';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1018,6 +1059,7 @@ declare module '@strapi/strapi' {
       'api::project.project': ApiProjectProject;
       'api::service.service': ApiServiceService;
       'api::subservice.subservice': ApiSubserviceSubservice;
+      'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

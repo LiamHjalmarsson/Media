@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subservice",
     "pluralName": "subservices",
-    "displayName": "Subservice"
+    "displayName": "Subservice",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,10 +19,10 @@
       "type": "text",
       "required": true
     },
-    "service": {
+    "tags": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::service.service"
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,14 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "client": {
       "type": "string"
@@ -40,6 +41,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "subservices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subservice.subservice"
     }
   }
 }
