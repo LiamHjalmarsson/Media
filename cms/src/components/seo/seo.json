@@ -9,16 +9,16 @@
   "attributes": {
     "metaTitle": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "metaDescription": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "metaImage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -30,7 +30,7 @@
     },
     "metaCanonicalUrl": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }

@@ -61,11 +61,10 @@ export interface SeoSeo extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    metaCanonicalUrl: Schema.Attribute.String & Schema.Attribute.Required;
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaImage: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    metaCanonicalUrl: Schema.Attribute.String;
+    metaDescription: Schema.Attribute.Text;
+    metaImage: Schema.Attribute.Media<'images' | 'files'>;
+    metaTitle: Schema.Attribute.String;
     preventIndexing: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
   };
