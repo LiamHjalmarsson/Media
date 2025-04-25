@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_elements_links",
+  "collectionName": "components_config_menu_links",
   "info": {
-    "displayName": "Link",
-    "icon": "arrowRight",
+    "displayName": "Menu link",
     "description": ""
   },
   "options": {},
@@ -11,13 +10,9 @@
       "type": "string",
       "required": true
     },
-    "href": {
+    "slug": {
       "type": "string",
       "required": true
-    },
-    "isExternal": {
-      "type": "boolean",
-      "default": false
     }
   }
 }

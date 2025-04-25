@@ -1,28 +1,31 @@
 {
-  "collectionName": "components_elements_social_links",
+  "collectionName": "components_config_social_links",
   "info": {
-    "displayName": "Social link"
+    "displayName": "Social link",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "platform": {
+    "slug": {
       "type": "string",
       "required": true
     },
-    "link": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "nuxtIcon": {
       "type": "string",
       "required": true
     },
     "icon": {
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos"
       ],
       "type": "media",
       "multiple": false
-    },
-    "nuxt_icon": {
-      "type": "string"
     }
   }
 }

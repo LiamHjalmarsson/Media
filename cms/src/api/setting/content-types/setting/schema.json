@@ -11,36 +11,46 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "default_seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.seo",
-      "required": true
-    },
-    "cookie_policy": {
-      "type": "blocks",
-      "required": true
-    },
-    "gdpr": {
-      "type": "blocks"
-    },
-    "social_links": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.social-link"
-    },
-    "site_name": {
+    "siteName": {
       "type": "string",
       "required": true
     },
     "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "menu": {
+      "displayName": "MenuLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "config.menu-link"
+    },
+    "contact": {
+      "displayName": "contact",
+      "type": "component",
+      "repeatable": false,
+      "component": "config.contact"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "gdpr": {
+      "type": "blocks"
+    },
+    "cookie": {
+      "type": "blocks"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.social-link"
     }
   }
 }

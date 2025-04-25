@@ -413,14 +413,14 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::article.article'
     >;
-    published_date: Schema.Attribute.Date &
+    publishedAt: Schema.Attribute.DateTime;
+    publishedDate: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -428,7 +428,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         };
       }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    subservices: Schema.Attribute.Relation<
+    subServices: Schema.Attribute.Relation<
       'oneToMany',
       'api::subservice.subservice'
     >;
@@ -449,6 +449,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
+    description: '';
     displayName: 'HomePage';
     pluralName: 'home-pages';
     singularName: 'home-page';
@@ -566,12 +567,11 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    cookie_policy: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    contact: Schema.Attribute.Component<'config.contact', false>;
+    cookie: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    default_seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.Required;
     favicon: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     gdpr: Schema.Attribute.Blocks;
@@ -581,9 +581,11 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
       'api::setting.setting'
     > &
       Schema.Attribute.Private;
+    menu: Schema.Attribute.Component<'config.menu-link', true>;
     publishedAt: Schema.Attribute.DateTime;
-    site_name: Schema.Attribute.String & Schema.Attribute.Required;
-    social_links: Schema.Attribute.Component<'elements.social-link', true>;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    socialLinks: Schema.Attribute.Component<'config.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

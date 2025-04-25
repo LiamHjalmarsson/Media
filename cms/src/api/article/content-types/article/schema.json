@@ -54,7 +54,7 @@
         }
       }
     },
-    "published_date": {
+    "publishedDate": {
       "type": "date",
       "required": true,
       "pluginOptions": {
@@ -74,7 +74,7 @@
         }
       }
     },
-    "subservices": {
+    "subServices": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subservice.subservice"

@@ -16,19 +16,19 @@
       "required": true
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "preventIndexing": {
       "type": "boolean",
       "default": false
     },
-    "metaCanonicalURL": {
+    "metaCanonicalUrl": {
       "type": "string",
       "required": true
     }
