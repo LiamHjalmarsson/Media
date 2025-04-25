@@ -1,5 +1,11 @@
-<script setup></script>
+<script setup>
+const global = useGlobalStore();
+
+onMounted(() => {
+	global.getSettings();
+});
+</script>
 
 <template>
-	<h1 class="">Index</h1>
+	<Hero> </Hero>
 </template>

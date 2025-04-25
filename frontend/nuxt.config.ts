@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 		format: ["webp"],
 		dir: "assets/images",
 		strapi: {
-			baseURL: "http://localhost:1337",
+			baseURL: "http://localhost:1337/",
 		},
 	},
 

@@ -1,31 +1,26 @@
 import { defineStore } from "pinia";
 
 export const useGlobalStore = defineStore("global", () => {
-	const siteName = ref("");
-	const favIcon = ref(null);
+	const settings = ref([]);
 
-	const defaultSeo = ref({});
-
-	const cookie = ref("");
-	const gdpr = ref("");
-
-	const socials = ref([]);
+	const contact = ref({});
+	const menuLinks = ref([]);
+	const socialLinks = ref([]);
+	const cookie = ref({});
 
 	const { find } = useStrapi();
 
 	const getSettings = async () => {
 		const { data } = await find("setting?populate=*");
+		settings.value = data;
 
-		siteName.value = data.id;
+		menuLinks.value = data.menu;
 	};
 
 	return {
-		siteName,
-		favIcon,
-		defaultSeo,
-		cookie,
-		gdpr,
-		socials,
+		settings,
+		menuLinks,
+
 		getSettings,
 	};
 });

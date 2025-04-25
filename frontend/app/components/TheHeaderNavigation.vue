@@ -1,22 +1,7 @@
 <script setup>
-const links = [
-	{
-		path: "/projects",
-		label: "Project",
-	},
-	{
-		path: "/services",
-		label: "Service",
-	},
-	{
-		path: "/articles",
-		label: "Artiklar",
-	},
-	{
-		path: "/about",
-		label: "Om oss",
-	},
-];
+const store = useGlobalStore();
+
+const isContact = (slug) => slug === "contact";
 </script>
 
 <template>
@@ -24,24 +9,22 @@ const links = [
 		<ul
 			class="flex items-center max-lg:flex-col max-lg:space-y-10 lg:space-x-5">
 			<li
-				v-for="link in links"
+				v-for="link in store.menuLinks"
 				:key="link.path"
 				class="relative group">
 				<NuxtLink
-					:to="link.path"
-					class="p-4 font-semibold group-hover:text-primary transition-colors duration-150">
+					:to="link.slug"
+					:class="[
+						'transition duration-300 font-semibold',
+						isContact(link.slug)
+							? 'px-8 py-2.5 bg-primary text-white rounded-full hover:bg-primary-hover'
+							: 'p-4 group-hover:text-primary',
+					]">
 					{{ link.label }}
 
 					<span
-						class="absolute left-0 bottom-0 origin-center bg-primary h-0.5 w-0 max-w-full scale-x-0 transition-all duration-150 group-hover:w-full transform group-hover:scale-x-100"></span>
-				</NuxtLink>
-			</li>
-
-			<li class="pl-5">
-				<NuxtLink
-					to="/contact"
-					class="px-8 py-2 bg-primary text-white rounded-full font-semibold transition duration-150 hover:bg-primary-hover">
-					Kontakta
+						v-if="!isContact(link.slug)"
+						class="absolute left-0 bottom-0 origin-center bg-primary h-0.5 w-0 max-w-full transition-all duration-300 group-hover:w-full transform"></span>
 				</NuxtLink>
 			</li>
 		</ul>

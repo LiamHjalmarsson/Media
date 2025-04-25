@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Graphik", "sans-serif"],
-				serif: ["Merriweather", "serif"],
+				body: ["Quicksand", "sans-serif"],
+				heading: ["Montserrat", "serif"],
 			},
 
 			fontSize: {
@@ -15,14 +15,14 @@ export default {
 				"body-sm": "14px",
 				"body-xs": "12px",
 
-				"heading-4xl": "96px",
-				"heading-3xl": "80px",
-				"heading-2xl": "54px",
-				"heading-xl": "48px",
-				"heading-lg": "42px",
-				"heading-md": "36px",
-				"heading-sm": "30px",
-				"heading-xs": "24px",
+				"heading-4xl": "82px",
+				"heading-3xl": "74px",
+				"heading-2xl": "66px",
+				"heading-xl": "58px",
+				"heading-lg": "50px",
+				"heading-md": "42px",
+				"heading-sm": "34px",
+				"heading-xs": "26px",
 			},
 
 			colors: {

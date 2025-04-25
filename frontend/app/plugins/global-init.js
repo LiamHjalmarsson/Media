@@ -1,13 +1,30 @@
 export default defineNuxtPlugin(async (nuxtApp) => {
 	const globalStore = useGlobalStore();
-
 	await globalStore.getSettings();
 
 	nuxtApp.hook("app:mounted", () => {
-		const seoData = globalStore.defaultSeo;
+		const settings = globalStore.settings;
 
-		const metaTags = generateMetaTags(seoData);
-		console.log(metaTags);
-		useHead(metaTags);
+		const metaTags = generateMetaTags(settings.seo);
+
+		console.log("sdasda", settings.favicon.url);
+		useHead({
+			title: settings.siteName,
+
+			htmlAttrs: {
+				lang: settings.lang || "en",
+			},
+
+			meta: metaTags,
+
+			link: [
+				{
+					rel: "icon",
+					type: "image/png",
+					href:
+						"http://localhost:1337" + settings.favicon.url,
+				},
+			],
+		});
 	});
 });
