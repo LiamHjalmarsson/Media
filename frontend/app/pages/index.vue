@@ -1,7 +1,5 @@
-<script setup>
-// const globalStore = useGlobalStore();
-</script>
+<script setup></script>
 
 <template>
-	<h1 class="text-red-500">Index</h1>
+	<h1 class="">Index</h1>
 </template>

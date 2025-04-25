@@ -3,10 +3,11 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
 	await globalStore.getSettings();
 
-	// Once app is mounted, set the meta tags
 	nuxtApp.hook("app:mounted", () => {
 		const seoData = globalStore.defaultSeo;
+
 		const metaTags = generateMetaTags(seoData);
+		console.log(metaTags);
 		useHead(metaTags);
 	});
 });

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-	<div class="bg-slate-900 min-h-screen">
+	<NuxtLayout>
 		<NuxtPage />
-	</div>
+	</NuxtLayout>
 </template>

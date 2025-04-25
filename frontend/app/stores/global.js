@@ -16,7 +16,6 @@ export const useGlobalStore = defineStore("global", () => {
 	const getSettings = async () => {
 		const { data } = await find("setting?populate=*");
 
-		console.log(data);
 		siteName.value = data.id;
 	};
 
