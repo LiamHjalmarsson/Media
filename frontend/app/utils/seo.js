@@ -1,11 +1,11 @@
 export const generateMetaTags = (seoData) => {
-	const defaultTitle = seoData.metaTitle || "Alt-media";
+	const defaultTitle = seoData?.metaTitle || "Alt-media";
 
 	const defaultDescription =
-		seoData.metaDescription || "Default description";
+		seoData?.metaDescription || "Default description";
 
 	const canonicalUrl =
-		seoData.metaCanonicalUrl || window.location.href;
+		seoData?.metaCanonicalUrl || window.location.href;
 
 	return [
 		{
@@ -14,7 +14,7 @@ export const generateMetaTags = (seoData) => {
 		},
 		{
 			name: "robots",
-			content: seoData.preventIndexing
+			content: seoData?.preventIndexing
 				? "noindex"
 				: "index",
 		},

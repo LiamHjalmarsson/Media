@@ -9,13 +9,13 @@ const isContact = (slug) => slug === "contact";
 		<ul
 			class="flex items-center max-lg:flex-col max-lg:space-y-10 lg:space-x-5">
 			<li
-				v-for="link in store.menuLinks"
+				v-for="link in store.header.links"
 				:key="link.path"
 				class="relative group">
 				<NuxtLink
-					:to="link.slug"
+					:to="link.href"
 					:class="[
-						'transition duration-300 font-semibold',
+						'font-semibold',
 						isContact(link.slug)
 							? 'px-8 py-2.5 bg-primary text-white rounded-full hover:bg-primary-hover'
 							: 'p-4 group-hover:text-primary',

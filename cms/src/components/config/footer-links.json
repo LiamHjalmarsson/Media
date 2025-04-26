@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_config_footer_links",
+  "info": {
+    "displayName": "footer-links"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.link"
+    }
+  }
+}

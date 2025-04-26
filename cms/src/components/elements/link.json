@@ -14,10 +14,6 @@
     "href": {
       "type": "string",
       "required": true
-    },
-    "isExternal": {
-      "type": "boolean",
-      "default": false
     }
   }
 }

@@ -13,15 +13,15 @@ export interface ConfigContact extends Struct.ComponentSchema {
   };
 }
 
-export interface ConfigMenuLink extends Struct.ComponentSchema {
-  collectionName: 'components_config_menu_links';
+export interface ConfigFooterLinks extends Struct.ComponentSchema {
+  collectionName: 'components_config_footer_links';
   info: {
-    description: '';
-    displayName: 'Menu link';
+    displayName: 'footer-links';
   };
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    links: Schema.Attribute.Component<'elements.link', true>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -48,7 +48,6 @@ export interface ElementsLink extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
-    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -74,7 +73,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'config.contact': ConfigContact;
-      'config.menu-link': ConfigMenuLink;
+      'config.footer-links': ConfigFooterLinks;
       'config.social-link': ConfigSocialLink;
       'elements.link': ElementsLink;
       'seo.seo': SeoSeo;

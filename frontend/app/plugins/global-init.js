@@ -7,12 +7,11 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
 		const metaTags = generateMetaTags(settings.seo);
 
-		console.log("sdasda", settings.favicon.url);
 		useHead({
 			title: settings.siteName,
 
 			htmlAttrs: {
-				lang: settings.lang || "en",
+				lang: settings?.lang || "en",
 			},
 
 			meta: metaTags,
@@ -22,7 +21,8 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 					rel: "icon",
 					type: "image/png",
 					href:
-						"http://localhost:1337" + settings.favicon.url,
+						"http://localhost:1337" +
+						settings?.favicon?.url,
 				},
 			],
 		});

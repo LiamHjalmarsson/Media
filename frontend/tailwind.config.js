@@ -23,6 +23,7 @@ export default {
 				"heading-md": "42px",
 				"heading-sm": "34px",
 				"heading-xs": "26px",
+				"heading-xxs": "20px",
 			},
 
 			colors: {

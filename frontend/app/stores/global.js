@@ -3,23 +3,35 @@ import { defineStore } from "pinia";
 export const useGlobalStore = defineStore("global", () => {
 	const settings = ref([]);
 
-	const contact = ref({});
-	const menuLinks = ref([]);
-	const socialLinks = ref([]);
-	const cookie = ref({});
+	const header = ref([]);
+	const footer = ref([]);
 
 	const { find } = useStrapi();
 
 	const getSettings = async () => {
-		const { data } = await find("setting?populate=*");
-		settings.value = data;
+		try {
+			const [
+				settingsResponse,
+				footerResponse,
+				headerResponse,
+			] = await Promise.all([
+				find("global?populate=*"),
+				find(
+					"footer?fields[0]=heading&populate[0]=footerColumn&populate[1]=footerColumn.links"
+				),
+				find("header?fields[0]=showLogo&populate[0]=links"),
+			]);
 
-		menuLinks.value = data.menu;
+			settings.value = settingsResponse.data;
+			header.value = headerResponse.data;
+			footer.value = footerResponse.data;
+		} catch (error) {}
 	};
 
 	return {
 		settings,
-		menuLinks,
+		header,
+		footer,
 
 		getSettings,
 	};
