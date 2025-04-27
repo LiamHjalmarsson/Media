@@ -17,7 +17,7 @@ export const useGlobalStore = defineStore("global", () => {
 			] = await Promise.all([
 				find("global?populate=*"),
 				find(
-					"footer?fields[0]=heading&populate[0]=footerColumn&populate[1]=footerColumn.links"
+					"footer?populate[0]=footerColumn&populate[1]=footerColumn.links"
 				),
 				find("header?fields[0]=showLogo&populate[0]=links"),
 			]);
@@ -25,7 +25,9 @@ export const useGlobalStore = defineStore("global", () => {
 			settings.value = settingsResponse.data;
 			header.value = headerResponse.data;
 			footer.value = footerResponse.data;
-		} catch (error) {}
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return {

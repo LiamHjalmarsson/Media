@@ -62,9 +62,10 @@ export interface LayoutHero extends Struct.ComponentSchema {
   };
   attributes: {
     buttons: Schema.Attribute.Component<'elements.link', true>;
-    content: Schema.Attribute.Blocks;
-    images: Schema.Attribute.Media<'images' | 'files' | 'videos', true> &
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

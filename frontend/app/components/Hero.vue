@@ -1,22 +1,43 @@
 <script setup>
-const props = defineProps({});
+const props = defineProps({
+	hero: Object,
+});
+
+console.log(props);
 </script>
 
 <template>
 	<div
 		class="flex justify-center items-center relative min-h-[760px] bg-neutral">
+		<div class="absolute h-full overflow-hidden">
+			<NuxtImg
+				provider="strapi"
+				preload
+				:src="hero.image.url"
+				alt=""
+				sizes="100vw"
+				densities="x1 x2"
+				reset="cover"
+				placeholder
+				format="webp"
+				quality="30" />
+		</div>
 		<div
-			class="p-20 text-neutral-white text-center space-y-10 font-heading container">
-			<h1 class="text-heading-4xl font-extrabold">
-				Vi
-				<span class="text-secondary"> hjälper </span> er med
-				allt inom <span class="text-secondary"> webb </span>
+			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10">
+			<h1
+				class="text-heading-4xl font-extrabold"
+				v-if="hero.title">
+				{{ hero.title }}
 			</h1>
-			<h3 class="text-heading-md">Enkelt och prisvärd</h3>
-			<div>
+			<h3 class="text-heading-md" v-if="hero.subtitle">
+				{{ hero.subtitle }}
+			</h3>
+
+			<div v-if="hero.buttons">
 				<BaseButton
-					to="/contact"
-					label="Kontakta oss"></BaseButton>
+					v-for="button in hero.buttons"
+					:to="'/' + button.path"
+					:label="button.label" />
 			</div>
 		</div>
 	</div>

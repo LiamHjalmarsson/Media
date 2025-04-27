@@ -26,6 +26,17 @@ export default defineNuxtConfig({
 		strapi: {
 			baseURL: "http://localhost:1337/",
 		},
+
+		presets: {
+			cover: {
+				modifiers: {
+					fit: "cover",
+					format: "jpg",
+					width: 300,
+					height: 300,
+				},
+			},
+		},
 	},
 
 	app: {

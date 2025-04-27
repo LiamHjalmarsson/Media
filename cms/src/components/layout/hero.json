@@ -7,9 +7,17 @@
   },
   "options": {},
   "attributes": {
-    "images": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
@@ -21,9 +29,6 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.link"
-    },
-    "content": {
-      "type": "blocks"
     }
   }
 }
