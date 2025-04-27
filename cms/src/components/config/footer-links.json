@@ -1,7 +1,8 @@
 {
   "collectionName": "components_config_footer_links",
   "info": {
-    "displayName": "footer-links"
+    "displayName": "footer links",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "url": {
+    "path": {
       "type": "string",
       "required": true
     },

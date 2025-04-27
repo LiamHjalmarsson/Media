@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "slug": {
+    "path": {
       "type": "string",
       "required": true
     },
@@ -19,13 +19,14 @@
       "required": true
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

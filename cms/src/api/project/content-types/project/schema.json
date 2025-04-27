@@ -34,18 +34,19 @@
         "videos"
       ]
     },
-    "client": {
-      "type": "string"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.seo"
-    },
     "subservices": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subservice.subservice"
+    },
+    "client": {
+      "type": "string",
+      "required": true
+    },
+    "pageInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.page-info"
     }
   }
 }

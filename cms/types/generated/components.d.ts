@@ -16,12 +16,13 @@ export interface ConfigContact extends Struct.ComponentSchema {
 export interface ConfigFooterLinks extends Struct.ComponentSchema {
   collectionName: 'components_config_footer_links';
   info: {
-    displayName: 'footer-links';
+    description: '';
+    displayName: 'footer links';
   };
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     links: Schema.Attribute.Component<'elements.link', true>;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -35,7 +36,7 @@ export interface ConfigSocialLink extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     nuxtIcon: Schema.Attribute.String & Schema.Attribute.Required;
-    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -47,8 +48,35 @@ export interface ElementsLink extends Struct.ComponentSchema {
     icon: 'arrowRight';
   };
   attributes: {
-    href: Schema.Attribute.String & Schema.Attribute.Required;
     label: Schema.Attribute.String & Schema.Attribute.Required;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LayoutHero extends Struct.ComponentSchema {
+  collectionName: 'components_layout_heroes';
+  info: {
+    description: '';
+    displayName: 'Hero';
+    icon: 'expand';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'elements.link', true>;
+    content: Schema.Attribute.Blocks;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface LayoutPageInfo extends Struct.ComponentSchema {
+  collectionName: 'components_layout_page_infos';
+  info: {
+    description: '';
+    displayName: 'Page info';
+  };
+  attributes: {
+    Hero: Schema.Attribute.Component<'layout.hero', false>;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
   };
 }
 
@@ -56,7 +84,7 @@ export interface SeoSeo extends Struct.ComponentSchema {
   collectionName: 'components_seo_seos';
   info: {
     description: '';
-    displayName: 'Seo';
+    displayName: 'Seo information';
     icon: 'bulletList';
   };
   attributes: {
@@ -76,6 +104,8 @@ declare module '@strapi/strapi' {
       'config.footer-links': ConfigFooterLinks;
       'config.social-link': ConfigSocialLink;
       'elements.link': ElementsLink;
+      'layout.hero': LayoutHero;
+      'layout.page-info': LayoutPageInfo;
       'seo.seo': SeoSeo;
     }
   }

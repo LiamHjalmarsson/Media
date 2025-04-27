@@ -39,53 +39,24 @@
         }
       }
     },
+    "subServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subservice.subservice"
+    },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+        "files"
+      ]
     },
-    "publishedDate": {
-      "type": "date",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "seo": {
-      "displayName": "Seo",
+    "pageInfo": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "subServices": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::subservice.subservice"
-    },
-    "content": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "component": "layout.page-info"
     }
   }
 }

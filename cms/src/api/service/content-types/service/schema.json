@@ -28,15 +28,16 @@
       "type": "string",
       "required": true
     },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.seo"
-    },
     "subservices": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::subservice.subservice"
+      "target": "api::subservice.subservice",
+      "mappedBy": "service"
+    },
+    "pageInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.page-info"
     }
   }
 }
