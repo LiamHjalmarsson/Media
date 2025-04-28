@@ -17,7 +17,7 @@ module.exports = createCoreController(
 				.query("api::service.service")
 				.findOne({
 					where: { slug: id },
-					populate: ["subservices"],
+					populate: ["subservices", "subservices.tag"],
 				});
 
 			const sanitizedEntity = await this.sanitizeOutput(
