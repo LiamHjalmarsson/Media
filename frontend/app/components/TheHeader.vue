@@ -27,7 +27,7 @@ onUnmounted(() => {
 <template>
 	<header
 		:class="[
-			'fixed inset-x-0 top-0 z-10 py-1.5 sm:border-0 sm:py-5 sm:px-10 bg-transparent transition duration-300',
+			'fixed inset-x-0 top-0 z-50 py-1.5 sm:border-0 sm:py-5 sm:px-10 bg-transparent transition duration-300',
 			isScrolled
 				? 'text-neutral bg-white'
 				: ' text-neutral-white bg-transparent',
@@ -36,7 +36,7 @@ onUnmounted(() => {
 			class="flex max-lg:flex-col items-center justify-between max-lg:space-y-10 lg:space-x-10">
 			<NuxtLink
 				to="/"
-				class="font-semibold text-heading-xs text-secondary">
+				class="font-bold text-heading-sm text-secondary">
 				{{ store.settings.siteName }}
 			</NuxtLink>
 

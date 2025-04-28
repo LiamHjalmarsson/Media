@@ -11,14 +11,15 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "hero": {
       "type": "component",
       "repeatable": false,
       "component": "layout.hero"
+    },
+    "serviceSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-section.page-section"
     }
   }
 }

@@ -15,7 +15,7 @@ const isContact = (slug) => slug === "contact";
 				<NuxtLink
 					:to="link.path"
 					:class="[
-						'font-semibold',
+						'font-semibold text-body-lg',
 						isContact(link.path)
 							? 'px-8 py-2.5 bg-primary text-white rounded-full hover:bg-primary-hover transition duration-300'
 							: 'p-4 group-hover:text-primary',

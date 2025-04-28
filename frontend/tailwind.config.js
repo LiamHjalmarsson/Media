@@ -70,6 +70,22 @@ export default {
 				},
 			},
 
+			transitionDuration: {
+				DEFAULT: "200ms",
+				fast: "150ms",
+				slow: "300ms",
+			},
+
+			boxShadow: {
+				DEFAULT: "0 2px 6px 0 rgba(35, 38, 39, 0.15)",
+				xs: "0 1px 4px 0 rgba(35, 38, 39, 0.05)",
+				sm: "0 2px 8px -2px rgba(35, 38, 39, 0.1)",
+				md: "0 4px 16px -4px rgba(35, 38, 39, 0.1)",
+				lg: "0 6px 24px -6px rgba(35, 38, 39, 0.08)",
+				xl: "0 8px 32px -8px rgba(35, 38, 39, 0.1)",
+				"2xl": "0 12px 40px -12px rgba(35, 38, 39, 0.1)",
+			},
+
 			screens: {},
 		},
 	},

@@ -62,6 +62,7 @@ export interface LayoutHero extends Struct.ComponentSchema {
   };
   attributes: {
     buttons: Schema.Attribute.Component<'elements.link', true>;
+    highlighted: Schema.Attribute.JSON;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
@@ -78,6 +79,18 @@ export interface LayoutPageInfo extends Struct.ComponentSchema {
   attributes: {
     Hero: Schema.Attribute.Component<'layout.hero', false>;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+  };
+}
+
+export interface PageSectionPageSection extends Struct.ComponentSchema {
+  collectionName: 'components_page_section_page_sections';
+  info: {
+    description: '';
+    displayName: 'Page section';
+  };
+  attributes: {
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -107,6 +120,7 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'layout.hero': LayoutHero;
       'layout.page-info': LayoutPageInfo;
+      'page-section.page-section': PageSectionPageSection;
       'seo.seo': SeoSeo;
     }
   }

@@ -2,8 +2,6 @@
 const props = defineProps({
 	hero: Object,
 });
-
-console.log(props);
 </script>
 
 <template>
@@ -16,7 +14,7 @@ console.log(props);
 				:src="hero.image.url"
 				quality="80"
 				format="webp"
-				:alt="hero.image.alternativeText"
+				:alt="hero.image.alternativeText || ''"
 				class="object-cover w-full h-full" />
 		</div>
 

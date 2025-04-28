@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_section_page_sections",
+  "info": {
+    "displayName": "Page section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    }
+  }
+}
