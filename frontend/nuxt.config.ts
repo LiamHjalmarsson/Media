@@ -21,21 +21,9 @@ export default defineNuxtConfig({
 	},
 
 	image: {
-		format: ["webp"],
 		dir: "assets/images",
 		strapi: {
-			baseURL: "http://localhost:1337/",
-		},
-
-		presets: {
-			cover: {
-				modifiers: {
-					fit: "cover",
-					format: "jpg",
-					width: 300,
-					height: 300,
-				},
-			},
+			baseURL: "http://localhost:1337",
 		},
 	},
 

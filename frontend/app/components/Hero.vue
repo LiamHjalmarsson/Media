@@ -9,15 +9,17 @@ console.log(props);
 <template>
 	<div
 		class="flex justify-center items-center relative min-h-[760px] bg-neutral">
-		<div class="absolute h-full overflow-hidden opacity-30">
+		<div
+			class="absolute w-full h-full overflow-hidden opacity-30">
 			<NuxtImg
 				provider="strapi"
 				:src="hero.image.url"
+				quality="80"
+				format="webp"
 				:alt="hero.image.alternativeText"
-				preload />
-			<!-- width="56" densities="x1 x2" reset="cover" placeholder
-			format="webp" quality="30" /> -->
+				class="object-cover w-full h-full" />
 		</div>
+
 		<div
 			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10">
 			<h1
