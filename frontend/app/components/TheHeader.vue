@@ -4,7 +4,7 @@ const store = useGlobalStore();
 const isScrolled = ref(false);
 
 const handleScroll = () => {
-	if (window.scrollY > 50) {
+	if (window.scrollY > 650) {
 		isScrolled.value = true;
 	} else {
 		isScrolled.value = false;
@@ -27,9 +27,9 @@ onUnmounted(() => {
 <template>
 	<header
 		:class="[
-			'fixed inset-x-0 top-0 z-50 py-1.5 sm:border-0 sm:py-5 sm:px-10 bg-transparent transition duration-300',
+			'fixed  inset-x-0 top-0 z-50 py-1.5 sm:border-0 sm:py-5 sm:px-10 bg-transparent transition duration-300',
 			isScrolled
-				? 'text-neutral bg-white'
+				? 'text-neutral bg-neutral-white/20 backdrop-blur-lg'
 				: ' text-neutral-white bg-transparent',
 		]">
 		<div
