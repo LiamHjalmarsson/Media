@@ -1,9 +1,7 @@
 <script setup>
-const props = defineProps({
+defineProps({
 	service: Object,
 });
-
-console.log(props);
 </script>
 
 <template>

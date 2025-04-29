@@ -31,8 +31,7 @@
     "subservices": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::subservice.subservice",
-      "mappedBy": "service"
+      "target": "api::subservice.subservice"
     },
     "pageInfo": {
       "type": "component",
