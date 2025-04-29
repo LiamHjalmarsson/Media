@@ -17,8 +17,8 @@ const isContact = (slug) => slug === "contact";
 					:class="[
 						'font-semibold text-body-lg',
 						isContact(link.path)
-							? 'px-8 py-2.5 bg-primary text-white rounded-full hover:bg-primary-hover transition duration-300'
-							: 'p-4 group-hover:text-primary',
+							? 'px-5 py-3 bg-primary transition-transform text-neutral-white rounded-full'
+							: 'p-4',
 					]">
 					{{ link.label }}
 

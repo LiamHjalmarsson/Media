@@ -16,11 +16,11 @@ defineProps({
 				class="flex flex-col justify-between h-full space-y-10">
 				<Icon
 					:name="service.icon"
-					class="text-heading-3xl text-accent-light" />
+					class="text-heading-xl text-accent-light" />
 
 				<div class="">
 					<h3
-						class="text-heading-md font-semibold mb-2.5 font-heading capitalize">
+						class="text-heading-sm font-semibold mb-2.5 font-heading capitalize">
 						{{ service.title }}
 					</h3>
 					<p class="">
@@ -30,9 +30,9 @@ defineProps({
 
 				<div class="flex justify-end">
 					<button
-						class="relative flex items-center justify-center border-2 border-primary rounded-full h-12 w-12 group-hover:w-36 transition-all duration-slow ease-in-out overflow-hidden bg-transparent group-hover:bg-primary/10">
+						class="relative flex items-center justify-center border-2 border-primary rounded-full h-10 w-10 group-hover:w-36 transition-all duration-slow ease-in-out overflow-hidden bg-transparent group-hover:bg-primary/10">
 						<span
-							class="absolute z-10 text-body-lg font-semibold text-primary opacity-0 transform -translate-x-4 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-slow ease-in-out whitespace-nowrap">
+							class="absolute z-10 text-body-md font-semibold text-primary opacity-0 transform -translate-x-4 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-slow ease-in-out whitespace-nowrap">
 							Läs mer
 						</span>
 

@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
 	<NuxtLink
 		:to="to"
-		class="relative w-fit mx-auto h-14 group flex items-center px-8">
+		class="relative w-fit mx-auto h-14 group flex items-center px-8 cursor-pointer">
 		<span class="relative z-10 font-medium tracking-wide">
 			{{ label }}
 		</span>

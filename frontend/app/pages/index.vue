@@ -31,4 +31,6 @@ const servicesData = computed(
 				:service="service" />
 		</ul>
 	</BaseSection>
+
+	<BenefitsItems />
 </template>
