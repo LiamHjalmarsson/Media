@@ -1,40 +1,50 @@
 import { defineStore } from "pinia";
 
 export const useGlobalStore = defineStore("global", () => {
-	const settings = ref([]);
-
+	const seo = ref([]);
 	const header = ref([]);
 	const footer = ref([]);
+	const contact = ref([]);
+
+	const siteName = ref(null);
+	const lang = ref(null);
+	const favicon = ref(null);
 
 	const { find } = useStrapi();
 
-	const getSettings = async () => {
+	const getGlobal = async () => {
 		try {
-			const [
-				settingsResponse,
-				footerResponse,
-				headerResponse,
-			] = await Promise.all([
-				find("global?populate=*"),
-				find(
-					"footer?populate[0]=footerColumn&populate[1]=footerColumn.links"
-				),
-				find("header?fields[0]=showLogo&populate[0]=links"),
-			]);
+			const { data: global } = await find("global", {
+				populate: [
+					"seo",
+					"favicon",
+					"header.links",
+					"header.logo",
+					"footer.footerColumn.links",
+					"contact.socialLinks",
+				],
+			});
 
-			settings.value = settingsResponse.data;
-			header.value = headerResponse.data;
-			footer.value = footerResponse.data;
+			seo.value = global.seo;
+			header.value = global.header;
+			footer.value = global.footer;
+			contact.value = global.contact;
+
+			siteName.value = global.siteName;
+			favicon.value = global.favicon;
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
 	return {
-		settings,
+		siteName,
+		favicon,
+		seo,
 		header,
 		footer,
+		contact,
 
-		getSettings,
+		getGlobal,
 	};
 });

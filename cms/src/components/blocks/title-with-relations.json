@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_title_with_relations",
   "info": {
-    "displayName": "TitleWithRelations"
+    "displayName": "Title With Relations",
+    "description": ""
   },
   "options": {},
   "attributes": {

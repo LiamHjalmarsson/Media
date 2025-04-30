@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_full_images",
+  "info": {
+    "displayName": "Full Image",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

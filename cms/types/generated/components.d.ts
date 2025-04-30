@@ -1,13 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface BlocksFaqItem extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_faq_items';
+export interface BlocksFullImage extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_full_images';
   info: {
-    displayName: 'faqItem';
+    displayName: 'Full Image';
+    icon: 'grid';
   };
   attributes: {
-    answer: Schema.Attribute.Text;
-    question: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -30,7 +33,7 @@ export interface BlocksListItem extends Struct.ComponentSchema {
   collectionName: 'components_blocks_list_items';
   info: {
     description: '';
-    displayName: 'ListItem';
+    displayName: 'List Item';
   };
   attributes: {
     description: Schema.Attribute.Text;
@@ -38,10 +41,22 @@ export interface BlocksListItem extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksSolution extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_solutions';
+  info: {
+    displayName: 'Solution';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.card-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksTitleWithRelations extends Struct.ComponentSchema {
   collectionName: 'components_blocks_title_with_relations';
   info: {
-    displayName: 'TitleWithRelations';
+    description: '';
+    displayName: 'Title With Relations';
   };
   attributes: {
     articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
@@ -92,6 +107,19 @@ export interface ConfigSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCardItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_card_items';
+  info: {
+    displayName: 'Card Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    nuxtIcon: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -102,6 +130,42 @@ export interface ElementsLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     path: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ElementsLogo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_logos';
+  info: {
+    displayName: 'logo';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files'>;
+    logoText: Schema.Attribute.String;
+    showLogo: Schema.Attribute.Boolean;
+  };
+}
+
+export interface LayoutFooter extends Struct.ComponentSchema {
+  collectionName: 'components_layout_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    footerColumn: Schema.Attribute.Component<'config.footer-links', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    description: '';
+    displayName: 'Header';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'elements.link', true>;
+    logo: Schema.Attribute.Component<'elements.logo', false>;
+    showLogo: Schema.Attribute.Boolean;
   };
 }
 
@@ -142,14 +206,19 @@ export interface SeoSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'blocks.faq-item': BlocksFaqItem;
+      'blocks.full-image': BlocksFullImage;
       'blocks.list': BlocksList;
       'blocks.list-item': BlocksListItem;
+      'blocks.solution': BlocksSolution;
       'blocks.title-with-relations': BlocksTitleWithRelations;
       'config.contact': ConfigContact;
       'config.footer-links': ConfigFooterLinks;
       'config.social-link': ConfigSocialLink;
+      'elements.card-item': ElementsCardItem;
       'elements.link': ElementsLink;
+      'elements.logo': ElementsLogo;
+      'layout.footer': LayoutFooter;
+      'layout.header': LayoutHeader;
       'layout.hero': LayoutHero;
       'seo.seo': SeoSeo;
     }

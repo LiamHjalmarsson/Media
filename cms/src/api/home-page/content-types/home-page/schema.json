@@ -11,12 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero"
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "layout.hero",
+        "blocks.list",
+        "blocks.solution",
         "blocks.title-with-relations",
-        "blocks.list"
+        "blocks.full-image"
       ]
     }
   }

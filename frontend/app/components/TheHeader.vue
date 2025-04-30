@@ -1,6 +1,7 @@
 <script setup>
 const store = useGlobalStore();
 
+console.log(store.header.logo.logoText);
 const isScrolled = ref(false);
 
 const handleScroll = () => {
@@ -37,7 +38,10 @@ onUnmounted(() => {
 			<NuxtLink
 				to="/"
 				class="font-bold text-heading-sm text-secondary">
-				{{ store.settings.siteName }}
+				<NuxtImg v-if="store.header.logo.showLogo" />
+				<span v-else>
+					{{ store.header.logo.logoText }}
+				</span>
 			</NuxtLink>
 
 			<TheHeaderNavigation />
