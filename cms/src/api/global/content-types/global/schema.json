@@ -29,11 +29,6 @@
       "repeatable": false,
       "component": "config.contact"
     },
-    "socialLinks": {
-      "type": "component",
-      "repeatable": false,
-      "component": "config.social-link"
-    },
     "seo": {
       "type": "component",
       "repeatable": false,

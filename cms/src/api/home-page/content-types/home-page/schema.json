@@ -11,15 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "hero": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.hero"
-    },
-    "serviceSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page-section.page-section"
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.hero",
+        "blocks.title-with-relations",
+        "blocks.list"
+      ]
     }
   }
 }

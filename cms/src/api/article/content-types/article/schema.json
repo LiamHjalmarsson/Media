@@ -52,11 +52,6 @@
         "images",
         "files"
       ]
-    },
-    "pageInfo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.page-info"
     }
   }
 }

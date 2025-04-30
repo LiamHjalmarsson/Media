@@ -16,6 +16,11 @@
     },
     "address": {
       "type": "string"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "config.social-link"
     }
   }
 }

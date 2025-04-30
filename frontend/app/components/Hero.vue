@@ -1,6 +1,9 @@
 <script setup>
-const props = defineProps({
-	hero: Object,
+defineProps({
+	block: {
+		type: Object,
+		required: true,
+	},
 });
 </script>
 
@@ -11,10 +14,10 @@ const props = defineProps({
 			class="absolute w-full h-full overflow-hidden opacity-30">
 			<NuxtImg
 				provider="strapi"
-				:src="hero.image.url"
+				:src="block.image.url"
 				quality="80"
 				format="webp"
-				:alt="hero.image.alternativeText || ''"
+				:alt="block.image.alternativeText || ''"
 				class="object-cover w-full h-full" />
 		</div>
 
@@ -22,16 +25,16 @@ const props = defineProps({
 			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10">
 			<h1
 				class="text-heading-4xl font-extrabold"
-				v-if="hero.title">
-				{{ hero.title }}
+				v-if="block.title">
+				{{ block.title }}
 			</h1>
-			<h3 class="text-heading-md" v-if="hero.subtitle">
-				{{ hero.subtitle }}
+			<h3 class="text-heading-md" v-if="block.subtitle">
+				{{ block.subtitle }}
 			</h3>
 
-			<div v-if="hero.buttons">
+			<div v-if="block.buttons">
 				<BaseButton
-					v-for="button in hero.buttons"
+					v-for="button in block.buttons"
 					:to="'/' + button.path"
 					:label="button.label" />
 			</div>

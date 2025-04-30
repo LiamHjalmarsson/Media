@@ -42,11 +42,6 @@
     "client": {
       "type": "string",
       "required": true
-    },
-    "pageInfo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.page-info"
     }
   }
 }
