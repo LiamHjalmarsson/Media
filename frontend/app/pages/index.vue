@@ -1,6 +1,4 @@
 <script setup>
-import { useBlockRenderer } from "~/composable/useBlockRender";
-
 const { find } = useStrapi();
 
 const { data: homePage } = await useAsyncData("home", () =>
