@@ -2,6 +2,8 @@ import {
 	Hero,
 	ServiceFeatures,
 	BenefitItems,
+	BlocksFullImage,
+	SolutionItems,
 } from "#components";
 
 export const useBlockRenderer = (componentType) => {
@@ -12,6 +14,10 @@ export const useBlockRenderer = (componentType) => {
 			return ServiceFeatures;
 		case "blocks.list":
 			return BenefitItems;
+		case "blocks.solution":
+			return SolutionItems;
+		case "blocks.full-image":
+			return BlocksFullImage;
 		default:
 			return null;
 	}

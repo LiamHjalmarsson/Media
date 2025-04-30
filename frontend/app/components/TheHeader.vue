@@ -1,7 +1,6 @@
 <script setup>
 const store = useGlobalStore();
 
-console.log(store.header.logo.logoText);
 const isScrolled = ref(false);
 
 const handleScroll = () => {
