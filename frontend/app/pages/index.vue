@@ -11,7 +11,7 @@ const { data: homePage } = await useAsyncData("home", () =>
 			"blocks.buttons",
 			"blocks.services",
 			"blocks.projects.cover",
-			"blocks.articles",
+			"blocks.articles.cover",
 			"blocks.items",
 			"blocks.cards",
 			"blocks.solution",
@@ -19,6 +19,8 @@ const { data: homePage } = await useAsyncData("home", () =>
 		],
 	})
 );
+
+console.log(homePage);
 
 const blocks = computed(
 	() => homePage.value?.data?.blocks || []

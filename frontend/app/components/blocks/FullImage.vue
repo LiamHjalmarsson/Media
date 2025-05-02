@@ -20,7 +20,7 @@ defineProps({
 		<div
 			class="text-white relative z-10 max-w-[750px] text-center">
 			<h3
-				class="text-heading-4xl font-bold font-heading text-secondary">
+				class="text-heading-4xl font-bold font-heading text-secondary mb-2.5">
 				{{ block.title }}
 			</h3>
 

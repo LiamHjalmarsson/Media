@@ -6,6 +6,7 @@ import {
 	ProjectFeatures,
 	BlocksList,
 	SolutionFaq,
+	ArticleFeatured,
 } from "#components";
 
 export const useBlockRenderer = (componentType) => {
@@ -24,6 +25,8 @@ export const useBlockRenderer = (componentType) => {
 			return BlocksFullImage;
 		case "blocks.faq":
 			return SolutionFaq;
+		case "blocks.featured-article":
+			return ArticleFeatured;
 		default:
 			return null;
 	}
