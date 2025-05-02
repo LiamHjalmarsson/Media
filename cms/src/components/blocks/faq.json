@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_faqs",
+  "info": {
+    "displayName": "Faq",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "displayName": "Faq Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item"
+    }
+  }
+}

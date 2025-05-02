@@ -28,9 +28,9 @@ defineProps({
 				v-if="block.title">
 				{{ block.title }}
 			</h1>
-			<h3 class="text-heading-md" v-if="block.subtitle">
+			<h2 class="text-heading-md" v-if="block.subtitle">
 				{{ block.subtitle }}
-			</h3>
+			</h2>
 
 			<div v-if="block.buttons">
 				<BaseButton

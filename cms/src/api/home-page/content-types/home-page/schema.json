@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Landing page",
+    "displayName": "Home page",
     "description": ""
   },
   "options": {
@@ -19,10 +19,13 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
+        "blocks.featured-service",
+        "blocks.featured-project",
+        "blocks.featured-article",
         "blocks.list",
+        "blocks.full-image",
         "blocks.solution",
-        "blocks.title-with-relations",
-        "blocks.full-image"
+        "blocks.faq"
       ]
     }
   }

@@ -14,6 +14,10 @@ defineProps({
 				v-for="item in block.items"
 				:key="item.id"
 				class="flex-1 space-y-5 text-center">
+				<Icon
+					:name="item.nuxtIcon"
+					class="text-[96px] text-accent-light" />
+
 				<h3
 					class="text-heading-sm font-heading font-semibold">
 					{{ item.title }}

@@ -18,9 +18,9 @@ defineProps({
 		<div class="absolute w-full h-full bg-accent/90"></div>
 
 		<div
-			class="text-white relative z-10 max-w-[650px] text-center">
+			class="text-white relative z-10 max-w-[750px] text-center">
 			<h3
-				class="text-heading-xl font-bold font-heading text-secondary">
+				class="text-heading-4xl font-bold font-heading text-secondary">
 				{{ block.title }}
 			</h3>
 

@@ -10,6 +10,8 @@ const { data: homePage } = await useAsyncData("home", () =>
 			"blocks.image",
 			"blocks.buttons",
 			"blocks.services",
+			"blocks.projects.cover",
+			"blocks.articles",
 			"blocks.items",
 			"blocks.cards",
 			"blocks.solution",

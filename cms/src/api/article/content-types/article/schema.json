@@ -39,7 +39,7 @@
         }
       }
     },
-    "subServices": {
+    "subservices": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subservice.subservice"

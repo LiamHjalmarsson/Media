@@ -15,16 +15,16 @@ const isContact = (slug) => slug === "contact";
 				<NuxtLink
 					:to="link.path"
 					:class="[
-						'font-semibold text-body-lg',
+						'font-semibold text-lg',
 						isContact(link.path)
-							? 'px-5 py-3 bg-primary transition-transform text-neutral-white rounded-full'
-							: 'p-4',
+							? 'px-6 py-2 bg-primary text-white rounded-full shadow-sm'
+							: 'px-4 py-2 hover:text-primary',
 					]">
 					{{ link.label }}
 
 					<span
 						v-if="!isContact(link.path)"
-						class="absolute left-0 -bottom-2 origin-center bg-primary h-0.5 w-0 max-w-full transition-all duration-300 group-hover:w-full transform"></span>
+						class="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-slow"></span>
 				</NuxtLink>
 			</li>
 		</ul>

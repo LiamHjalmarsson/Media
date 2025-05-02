@@ -23,7 +23,8 @@ export default defineNuxtConfig({
 	image: {
 		dir: "assets/images",
 		strapi: {
-			baseURL: "http://localhost:1337",
+			baseURL:
+				process.env.STRAPI_URL || "http://localhost:1337",
 		},
 	},
 

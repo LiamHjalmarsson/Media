@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_featured_services",
+  "info": {
+    "displayName": "Featured Service",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    }
+  }
+}

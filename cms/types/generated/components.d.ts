@@ -1,14 +1,64 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksFaq extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    description: '';
+    displayName: 'Faq';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.faq-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksFeaturedArticle extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_articles';
+  info: {
+    displayName: 'Featured Article';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksFeaturedProject extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_projects';
+  info: {
+    description: '';
+    displayName: 'Featured Project';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'elements.link', false>;
+    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksFeaturedService extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_services';
+  info: {
+    description: '';
+    displayName: 'Featured Service';
+  };
+  attributes: {
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksFullImage extends Struct.ComponentSchema {
   collectionName: 'components_blocks_full_images';
   info: {
-    displayName: 'Full Image';
+    description: '';
+    displayName: 'Full Section';
     icon: 'grid';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
-      Schema.Attribute.Required;
+    cta: Schema.Attribute.Component<'elements.link', true>;
+    hasImage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -48,20 +98,6 @@ export interface BlocksSolution extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'elements.card-item', true>;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface BlocksTitleWithRelations extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_title_with_relations';
-  info: {
-    description: '';
-    displayName: 'Title With Relations';
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
-    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
     title: Schema.Attribute.String;
   };
 }
@@ -110,13 +146,26 @@ export interface ConfigSocialLink extends Struct.ComponentSchema {
 export interface ElementsCardItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_card_items';
   info: {
-    displayName: 'Card Item';
+    description: '';
+    displayName: 'Card';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     nuxtIcon: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_faq_items';
+  info: {
+    description: '';
+    displayName: 'Faq Item';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.String;
   };
 }
 
@@ -130,6 +179,18 @@ export interface ElementsLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     path: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ElementsListItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_list_items';
+  info: {
+    description: '';
+    displayName: 'Text Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -206,16 +267,21 @@ export interface SeoSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.faq': BlocksFaq;
+      'blocks.featured-article': BlocksFeaturedArticle;
+      'blocks.featured-project': BlocksFeaturedProject;
+      'blocks.featured-service': BlocksFeaturedService;
       'blocks.full-image': BlocksFullImage;
       'blocks.list': BlocksList;
       'blocks.list-item': BlocksListItem;
       'blocks.solution': BlocksSolution;
-      'blocks.title-with-relations': BlocksTitleWithRelations;
       'config.contact': ConfigContact;
       'config.footer-links': ConfigFooterLinks;
       'config.social-link': ConfigSocialLink;
       'elements.card-item': ElementsCardItem;
+      'elements.faq-item': ElementsFaqItem;
       'elements.link': ElementsLink;
+      'elements.list-item': ElementsListItem;
       'elements.logo': ElementsLogo;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;

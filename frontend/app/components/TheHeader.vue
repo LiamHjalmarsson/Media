@@ -4,22 +4,17 @@ const store = useGlobalStore();
 const isScrolled = ref(false);
 
 const handleScroll = () => {
-	if (window.scrollY > 650) {
-		isScrolled.value = true;
-	} else {
-		isScrolled.value = false;
-	}
+	isScrolled.value = window.scrollY > 600;
 };
 
 onMounted(() => {
-	window.addEventListener("scroll", handleScroll);
+	window.addEventListener("scroll", handleScroll, {
+		passive: true,
+	});
+	handleScroll();
 });
 
-onBeforeMount(() => {
-	window.removeEventListener("scroll", handleScroll);
-});
-
-onUnmounted(() => {
+onBeforeUnmount(() => {
 	window.removeEventListener("scroll", handleScroll);
 });
 </script>
@@ -27,18 +22,23 @@ onUnmounted(() => {
 <template>
 	<header
 		:class="[
-			'fixed  inset-x-0 top-0 z-50 py-1.5 sm:border-0 sm:py-5 sm:px-10 bg-transparent transition duration-300',
+			'fixed inset-x-0 top-4 z-50 sm:py-4 sm:px-8  transition duration-fast mx-auto rounded-full w-[80%] max-w-[1200px] box-border',
 			isScrolled
-				? 'text-neutral bg-neutral-white/20 backdrop-blur-lg'
-				: ' text-neutral-white bg-transparent',
+				? 'bg-neutral-white/60 shadow-xl text-neutral backdrop-blur-xl bg-blend-overlay border border-neutral/10'
+				: ' text-neutral-white ',
 		]">
 		<div
 			class="flex max-lg:flex-col items-center justify-between max-lg:space-y-10 lg:space-x-10">
 			<NuxtLink
 				to="/"
-				class="font-bold text-heading-sm text-secondary">
-				<NuxtImg v-if="store.header.logo.showLogo" />
-				<span v-else>
+				:class="[
+					'font-bold text-heading-xs ',
+					isScrolled
+						? ' text-secondary-hover'
+						: 'text-secondary',
+				]">
+				<!-- <NuxtImg v-if="store.header.logo.showLogo" /> -->
+				<span>
 					{{ store.header.logo.logoText }}
 				</span>
 			</NuxtLink>

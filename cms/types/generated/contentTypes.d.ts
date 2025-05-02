@@ -404,7 +404,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    subServices: Schema.Attribute.Relation<
+    subservices: Schema.Attribute.Relation<
       'oneToMany',
       'api::subservice.subservice'
     >;
@@ -422,41 +422,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFooterFooter extends Struct.SingleTypeSchema {
-  collectionName: 'footers';
-  info: {
-    description: '';
-    displayName: 'Footer';
-    pluralName: 'footers';
-    singularName: 'footer';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    footerColumn: Schema.Attribute.Component<'config.footer-links', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::footer.footer'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: '';
-    displayName: 'Global';
+    displayName: 'Global settings';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -468,6 +438,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    defaultSeo: Schema.Attribute.Component<'seo.seo', false>;
     favicon: Schema.Attribute.Media<'images' | 'files'>;
     footer: Schema.Attribute.Component<'layout.footer', false>;
     header: Schema.Attribute.Component<'layout.header', false>;
@@ -478,39 +449,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
-  collectionName: 'headers';
-  info: {
-    description: '';
-    displayName: 'Header';
-    pluralName: 'headers';
-    singularName: 'header';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    links: Schema.Attribute.Component<'elements.link', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::header.header'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files'>;
-    publishedAt: Schema.Attribute.DateTime;
-    showLogo: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -521,7 +460,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
     description: '';
-    displayName: 'Landing page';
+    displayName: 'Home page';
     pluralName: 'home-pages';
     singularName: 'home-page';
   };
@@ -531,10 +470,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
       [
+        'blocks.featured-service',
+        'blocks.featured-project',
+        'blocks.featured-article',
         'blocks.list',
-        'blocks.solution',
-        'blocks.title-with-relations',
         'blocks.full-image',
+        'blocks.solution',
+        'blocks.faq',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -636,7 +578,7 @@ export interface ApiSubserviceSubservice extends Struct.CollectionTypeSchema {
   collectionName: 'subservices';
   info: {
     description: '';
-    displayName: 'Subservice';
+    displayName: 'Service category';
     pluralName: 'subservices';
     singularName: 'subservice';
   };
@@ -1198,9 +1140,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
-      'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
-      'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::project.project': ApiProjectProject;
       'api::service.service': ApiServiceService;

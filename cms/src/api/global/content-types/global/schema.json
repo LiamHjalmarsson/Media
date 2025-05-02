@@ -4,7 +4,7 @@
   "info": {
     "singularName": "global",
     "pluralName": "globals",
-    "displayName": "Global",
+    "displayName": "Global settings",
     "description": ""
   },
   "options": {
@@ -29,7 +29,7 @@
       "repeatable": false,
       "component": "config.contact"
     },
-    "seo": {
+    "defaultSeo": {
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
