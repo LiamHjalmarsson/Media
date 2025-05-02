@@ -11,7 +11,7 @@ defineProps({
 		:to="'services/' + service.slug"
 		class="flex group">
 		<BaseCard
-			class="transform transition duration-slow group-hover:-translate-y-1 group-hover:bg-secondary/10 group-hover:shadow-2xl">
+			class="transform transition duration-slow group-hover:-translate-y-1 group-hover:bg-secondary/20 group-hover:shadow-2xl">
 			<div
 				class="flex flex-col justify-between h-full space-y-10">
 				<Icon
