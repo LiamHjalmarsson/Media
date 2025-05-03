@@ -1,10 +1,18 @@
 <script setup>
-defineProps({
+const props = defineProps({
 	block: {
 		type: Object,
 		required: true,
 	},
 });
+
+const config = useRuntimeConfig();
+
+const imageUrl = computed(() =>
+	props.block?.image?.url
+		? `${config.public.strapi.url}${props.block.image.url}`
+		: null
+);
 </script>
 
 <template>
@@ -12,7 +20,7 @@ defineProps({
 		class="min-h-screen bg-cover bg-center relative flex justify-center items-center"
 		:style="{
 			backgroundImage: block?.image?.url
-				? `url(http://localhost:1337${block.image.url})`
+				? `url(${imageUrl})`
 				: 'none',
 		}">
 		<div class="absolute w-full h-full bg-accent/90"></div>

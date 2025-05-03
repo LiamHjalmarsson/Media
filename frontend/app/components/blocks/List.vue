@@ -11,17 +11,29 @@ defineProps({
 	<BaseSection
 		:title="block.title"
 		class="bg-accent text-neutral-white">
-		<div class="grid grid-cols-2 gap-20 mb-20">
-			<BlocksListItem
+		<ol class="grid grid-cols-2 gap-20 mb-20">
+			<li
+				class="grow"
 				v-for="(item, i) in block.items"
-				:key="item.id"
-				:benefit="item"
-				:num="i + 1" />
-		</div>
+				:key="item.id">
+				<div class="flex items-center font-heading">
+					<span
+						class="mr-5 text-[96px] font-bold text-secondary">
+						{{ i + 1 }}
+					</span>
+					<h3 class="text-heading-md font-semibold">
+						{{ item.title }}
+					</h3>
+				</div>
+				<p>
+					{{ item.description }}
+				</p>
+			</li>
+		</ol>
 
 		<BaseButton
+			v-if="block.hasButton"
 			label="Gratis analys"
-			to="/"
-			v-if="block.hasButton" />
+			to="/" />
 	</BaseSection>
 </template>
