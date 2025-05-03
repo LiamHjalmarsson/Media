@@ -199,10 +199,12 @@ export interface ElementsLogo extends Struct.ComponentSchema {
 export interface LayoutFooter extends Struct.ComponentSchema {
   collectionName: 'components_layout_footers';
   info: {
+    description: '';
     displayName: 'Footer';
   };
   attributes: {
     footerColumn: Schema.Attribute.Component<'config.footer-links', true>;
+    logo: Schema.Attribute.Component<'elements.logo', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -216,7 +218,6 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   attributes: {
     links: Schema.Attribute.Component<'elements.link', true>;
     logo: Schema.Attribute.Component<'elements.logo', false>;
-    showLogo: Schema.Attribute.Boolean;
   };
 }
 

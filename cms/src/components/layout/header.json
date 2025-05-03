@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "showLogo": {
-      "type": "boolean"
-    },
     "links": {
       "type": "component",
       "repeatable": true,
