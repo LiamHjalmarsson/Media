@@ -27,10 +27,4 @@ export default defineNuxtConfig({
 				process.env.STRAPI_URL || "http://localhost:1337",
 		},
 	},
-
-	app: {
-		head: {
-			title: "Alt-media",
-		},
-	},
 });

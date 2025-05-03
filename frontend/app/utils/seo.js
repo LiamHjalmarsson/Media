@@ -1,11 +1,15 @@
-export const generateMetaTags = (seoData) => {
-	const defaultTitle = seoData?.metaTitle || "Alt-media";
+export const generateMetaTags = (seo) => {
+	const defaultTitle = seo?.metaTitle || "Alt-media";
 
 	const defaultDescription =
-		seoData?.metaDescription || "Default description";
+		seo?.metaDescription || "Default description";
 
 	const canonicalUrl =
-		seoData?.metaCanonicalUrl || window.location.href;
+		seo?.metaCanonicalUrl || window.location.href;
+
+	const defaultImage =
+		`${process.env.STRAPI_URL || "http://localhost:1337"}` +
+		seo?.metaImage?.url;
 
 	return [
 		{
@@ -14,9 +18,7 @@ export const generateMetaTags = (seoData) => {
 		},
 		{
 			name: "robots",
-			content: seoData?.preventIndexing
-				? "noindex"
-				: "index",
+			content: seo?.preventIndexing ? "noindex" : "index",
 		},
 		{
 			property: "og:title",
@@ -31,6 +33,10 @@ export const generateMetaTags = (seoData) => {
 			content: canonicalUrl,
 		},
 		{
+			property: "og:image",
+			content: defaultImage,
+		},
+		{
 			name: "twitter:card",
 			content: "summary_large_image",
 		},
@@ -41,6 +47,10 @@ export const generateMetaTags = (seoData) => {
 		{
 			name: "twitter:description",
 			content: defaultDescription,
+		},
+		{
+			name: "twitter:image",
+			content: defaultImage,
 		},
 	];
 };

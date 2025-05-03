@@ -14,41 +14,30 @@ export const useGlobalStore = defineStore("global", () => {
 
 	const getGlobal = async () => {
 		try {
-			// const { data: global } = await find("global", {
-			// 	populate: [
-			// 		"seo",
-			// 		"favicon",
-			// 		"header.links",
-			// 		"header.logo",
-			// 		"footer.footerColumn.links",
-			// 		"contact.socialLinks",
-			// 	],
-			// });
-
-			const { data: global } = await useAsyncData(
-				"global",
-				() =>
-					find("global", {
-						populate: [
-							"defaultSeo",
-							"favicon",
-							"header.links",
-							"header.logo",
-							"footer.footerColumn.links",
-							"contact.socialLinks",
-						],
-					})
+			const { data } = await useAsyncData("global", () =>
+				find("global", {
+					populate: [
+						"defaultSeo.metaImage",
+						"favicon",
+						"header.links",
+						"header.logo",
+						"footer.footerColumn.links",
+						"contact.socialLinks",
+					],
+				})
 			);
 
-			seo.value = global.value.data.defaultSeo;
-			header.value = global.value.data.header;
-			footer.value = global.value.data.footer;
-			contact.value = global.value.data.contact;
+			const global = data.value.data;
 
-			siteName.value = global.value.data.siteName;
-			favicon.value = global.value.data.favicon;
+			seo.value = global.defaultSeo;
+			header.value = global.header;
+			footer.value = global.footer;
+			contact.value = global.contact;
+
+			siteName.value = global.siteName;
+			favicon.value = global.favicon;
 		} catch (error) {
-			console.log(error);
+			console.log("error", error);
 		}
 	};
 

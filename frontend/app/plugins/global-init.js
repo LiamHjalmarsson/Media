@@ -4,7 +4,6 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
 	nuxtApp.hook("app:mounted", () => {
 		const metaTags = generateMetaTags(globalStore.seo);
-
 		useHead({
 			title: globalStore.siteName,
 
@@ -19,7 +18,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 					rel: "icon",
 					type: "image/png",
 					href:
-						"http://localhost:1337" +
+						`${process.env.STRAPI_URL || "http://localhost:1337"}` +
 						globalStore?.favicon?.url,
 				},
 			],
