@@ -18,6 +18,11 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.logo"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
     }
   }
 }

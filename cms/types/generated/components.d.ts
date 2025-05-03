@@ -203,6 +203,7 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     displayName: 'Footer';
   };
   attributes: {
+    cta: Schema.Attribute.Component<'elements.link', false>;
     footerColumn: Schema.Attribute.Component<'config.footer-links', true>;
     logo: Schema.Attribute.Component<'elements.logo', false>;
     title: Schema.Attribute.String;
