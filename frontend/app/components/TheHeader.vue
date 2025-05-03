@@ -39,7 +39,7 @@ onBeforeUnmount(() => {
 				]">
 				<!-- <NuxtImg v-if="store.header.logo.showLogo" /> -->
 				<span>
-					{{ store.header.logo.logoText }}
+					{{ store.header.logo.logoText || store.siteName }}
 				</span>
 			</NuxtLink>
 

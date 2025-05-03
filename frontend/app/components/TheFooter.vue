@@ -24,7 +24,9 @@ const store = useGlobalStore();
 					</NuxtLink>
 
 					<ul class="space-y-5">
-						<li v-for="subLink in link.links">
+						<li
+							v-for="subLink in link.links"
+							:key="subLink.id">
 							<NuxtLink
 								:to="link.path + '/' + subLink.path"
 								class="text-body-sm">
