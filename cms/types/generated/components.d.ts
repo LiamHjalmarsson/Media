@@ -167,6 +167,8 @@ export interface ElementsLink extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     path: Schema.Attribute.String & Schema.Attribute.Required;
+    variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'ghost']> &
+      Schema.Attribute.DefaultTo<'primary'>;
   };
 }
 
