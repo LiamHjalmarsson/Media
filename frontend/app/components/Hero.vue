@@ -17,7 +17,7 @@ defineProps({
 				:src="block.image.url"
 				quality="80"
 				format="webp"
-				:alt="block.image.alternativeText || ''"
+				:alt="block.image.alternativeText || 'Hero image'"
 				class="object-cover w-full h-full" />
 		</div>
 
@@ -28,13 +28,16 @@ defineProps({
 				v-if="block.title">
 				{{ block.title }}
 			</h1>
-			<h2 class="text-heading-md" v-if="block.subtitle">
+			<h2
+				class="text-heading-md font-medium"
+				v-if="block.subtitle">
 				{{ block.subtitle }}
 			</h2>
 
 			<div v-if="block.buttons">
 				<BaseButton
 					v-for="button in block.buttons"
+					:key="button.id"
 					:to="'/' + button.path"
 					:label="button.label" />
 			</div>
