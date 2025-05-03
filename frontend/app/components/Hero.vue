@@ -17,7 +17,7 @@ defineProps({
 				:src="block.image.url"
 				quality="80"
 				format="webp"
-				:alt="block.image.alternativeText || 'Hero image'"
+				:alt="block.image.alternativeText || ''"
 				class="object-cover w-full h-full" />
 		</div>
 

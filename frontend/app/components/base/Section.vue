@@ -2,7 +2,6 @@
 defineProps({
 	title: {
 		type: String,
-		required: true,
 	},
 });
 </script>
@@ -11,6 +10,7 @@ defineProps({
 	<section class="px-10 py-32">
 		<div class="mx-auto max-w-[1250px]">
 			<h2
+				v-if="title"
 				class="text-heading-2xl font-heading font-bold mb-10">
 				{{ title }}
 			</h2>
