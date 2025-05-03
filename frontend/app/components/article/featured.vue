@@ -14,14 +14,16 @@ defineProps({
 		<div class="grid grid-cols-3 gap-20">
 			<div
 				v-for="article in block.articles"
-				:key="article.id">
+				:key="article.id"
+				class="cursor-pointer group overflow-hidden">
 				<NuxtImg
 					provider="strapi"
-					:src="article.cover.url" />
-				<h4 class="text-heading-xs my-2">
+					:src="article.cover.url"
+					class="mb-4" />
+				<h4 class="text-heading-xs mb-2">
 					{{ article.title }}
 				</h4>
-				<p class="text-body-md">
+				<p class="text-body-md line-clamp-2">
 					{{ article.description }}
 				</p>
 			</div>

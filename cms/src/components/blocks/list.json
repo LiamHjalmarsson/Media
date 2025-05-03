@@ -10,15 +10,15 @@
       "type": "string",
       "required": true
     },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.list-item"
-    },
     "hasButton": {
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.list-item"
     }
   }
 }

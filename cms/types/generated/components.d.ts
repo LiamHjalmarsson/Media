@@ -74,20 +74,8 @@ export interface BlocksList extends Struct.ComponentSchema {
     hasButton: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
-    items: Schema.Attribute.Component<'blocks.list-item', true>;
+    items: Schema.Attribute.Component<'elements.list-item', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface BlocksListItem extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_list_items';
-  info: {
-    description: '';
-    displayName: 'List Item';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
   };
 }
 
@@ -273,7 +261,6 @@ declare module '@strapi/strapi' {
       'blocks.featured-service': BlocksFeaturedService;
       'blocks.full-image': BlocksFullImage;
       'blocks.list': BlocksList;
-      'blocks.list-item': BlocksListItem;
       'blocks.solution': BlocksSolution;
       'config.contact': ConfigContact;
       'config.footer-links': ConfigFooterLinks;
