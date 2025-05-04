@@ -1,24 +1,24 @@
 import {
 	Hero,
-	ServiceFeatures,
 	BlocksFullImage,
-	SolutionItems,
-	ProjectFeatures,
 	BlocksList,
-	SolutionFaq,
-	ArticleFeatured,
 	ErrorFallback,
+	FeatureArticle,
+	FeatureProject,
+	FeatureService,
+	BlocksSolutionItems,
+	BlocksFaq,
 } from "#components";
 
 const blockComponents = {
 	"layout.hero": Hero,
-	"blocks.featured-service": ServiceFeatures,
-	"blocks.featured-project": ProjectFeatures,
-	"blocks.featured-article": ArticleFeatured,
+	"blocks.featured-service": FeatureService,
+	"blocks.featured-project": FeatureProject,
+	"blocks.featured-article": FeatureArticle,
 	"blocks.list": BlocksList,
-	"blocks.solution": SolutionItems,
+	"blocks.solution": BlocksSolutionItems,
 	"blocks.full-image": BlocksFullImage,
-	"blocks.faq": SolutionFaq,
+	"blocks.faq": BlocksFaq,
 };
 
 export const useBlockRenderer = (componentType) => {
