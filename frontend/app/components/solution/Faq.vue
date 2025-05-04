@@ -20,7 +20,11 @@ const toggleAnswer = (itemId) => {
 			v-for="(faq, i) in block.items"
 			:key="faq.id"
 			class="mb-10 border-b border-secondary pb-5 flex space-x-5"
-			@click="toggleAnswer(faq.id)">
+			role="button"
+			tabindex="0"
+			@click="toggleAnswer(faq.id)"
+			@keydown.enter="toggleAnswer(faq.id)"
+			@keydown.space.prevent="toggleAnswer(faq.id)">
 			<span
 				class="text-heading-lg font-semibold font-heading">
 				{{ i + 1 }}
@@ -34,7 +38,10 @@ const toggleAnswer = (itemId) => {
 					</h4>
 					<Icon
 						name="heroicons:chevron-down"
-						class="text-heading-xs transition-transform duration-slow" />
+						:class="[
+							'text-heading-xs transition-transform duration-slow',
+							activeItemId === faq.id ? 'rotate-180' : '',
+						]" />
 				</div>
 				<p v-if="activeItemId === faq.id" class="text-body">
 					{{ faq.answer }}
