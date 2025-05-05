@@ -5,15 +5,17 @@ defineProps({
 		required: true,
 	},
 });
+
+const toggleHandler = () => {};
 </script>
 
 <template>
 	<BaseSection :title="block.title">
-		<div class="flex flex-wrap gap-20">
+		<div class="flex flex-wrap gap-10">
 			<BaseCard
 				v-for="item in block.items"
 				:key="item.id"
-				class="group flex-1 space-y-5 text-center transition duration-slow hover:bg-secondary/20 cursor-pointer">
+				class="flex-1 space-y-5 text-center flex flex-col justify-between items-center">
 				<Icon
 					:name="item.nuxtIcon"
 					class="text-[96px] text-accent-light" />

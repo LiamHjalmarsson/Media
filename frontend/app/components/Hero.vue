@@ -38,7 +38,7 @@ defineProps({
 				<BaseButton
 					v-for="button in block.buttons"
 					:key="button.id"
-					:to="'/' + button.path"
+					:to="button.path"
 					:label="button.label" />
 			</div>
 		</div>

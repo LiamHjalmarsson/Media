@@ -37,7 +37,6 @@ onBeforeUnmount(() => {
 						? ' text-secondary-hover'
 						: 'text-secondary',
 				]">
-				<!-- <NuxtImg v-if="store.header.logo.showLogo" /> -->
 				<span>
 					{{ store.header.logo.logoText || store.siteName }}
 				</span>

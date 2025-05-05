@@ -9,8 +9,7 @@ defineProps({
 
 <template>
 	<NuxtLink :to="'services/' + service.slug" class="flex">
-		<BaseCard
-			class="transform transition duration-slow group-hover:-translate-y-1 group-hover:bg-secondary/20 group-hover:shadow-2xl">
+		<BaseCard>
 			<div
 				class="flex flex-col justify-between h-full space-y-10">
 				<Icon

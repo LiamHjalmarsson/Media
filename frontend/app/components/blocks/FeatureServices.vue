@@ -9,13 +9,12 @@ defineProps({
 
 <template>
 	<BaseSection :title="block.title">
-		<ul class="grid grid-cols-2 lg:grid-cols-3 gap-20">
-			<li
-				class="flex group"
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-10">
+			<FeatureService
+				:service="service"
+				:key="service.id"
 				v-for="service in block.services"
-				:key="service.id">
-				<FeatureService :service="service" />
-			</li>
-		</ul>
+				class="flex" />
+		</div>
 	</BaseSection>
 </template>

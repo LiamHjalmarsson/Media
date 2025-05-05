@@ -11,8 +11,8 @@ defineProps({
 	<BaseSection
 		:title="block.title"
 		class="bg-accent text-neutral-white">
-		<ol class="grid grid-cols-2 gap-20 mb-20">
-			<li
+		<div class="grid grid-cols-2 gap-20 mb-20">
+			<div
 				class="grow"
 				v-for="(item, i) in block.items"
 				:key="item.id">
@@ -28,8 +28,8 @@ defineProps({
 				<p>
 					{{ item.description }}
 				</p>
-			</li>
-		</ol>
+			</div>
+		</div>
 
 		<BaseButton
 			v-if="block.hasButton"
