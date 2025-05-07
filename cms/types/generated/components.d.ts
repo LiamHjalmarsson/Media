@@ -64,6 +64,20 @@ export interface BlocksFullImage extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksInfo extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_info_s';
+  info: {
+    displayName: 'Info ';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    cta: Schema.Attribute.Component<'elements.link', false>;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    reversed: Schema.Attribute.Boolean;
+  };
+}
+
 export interface BlocksList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_lists';
   info: {
@@ -264,6 +278,7 @@ declare module '@strapi/strapi' {
       'blocks.featured-project': BlocksFeaturedProject;
       'blocks.featured-service': BlocksFeaturedService;
       'blocks.full-image': BlocksFullImage;
+      'blocks.info': BlocksInfo;
       'blocks.list': BlocksList;
       'blocks.solution': BlocksSolution;
       'config.contact': ConfigContact;

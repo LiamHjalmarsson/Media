@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_info_s",
+  "info": {
+    "displayName": "Info "
+  },
+  "options": {},
+  "attributes": {
+    "reversed": {
+      "type": "boolean"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": false
+    },
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.hero",
+        "blocks.list",
+        "blocks.info",
+        "blocks.full-image",
+        "blocks.solution",
+        "blocks.featured-service",
+        "blocks.featured-project",
+        "blocks.featured-article",
+        "blocks.faq"
+      ]
+    }
+  }
+}
