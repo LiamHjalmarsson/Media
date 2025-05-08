@@ -18,7 +18,7 @@ defineProps({
 
 				<div class="">
 					<h3
-						class="text-heading-sm font-semibold mb-2.5 font-heading capitalize">
+						class="text-heading-xs font-semibold mb-2.5 font-heading capitalize">
 						{{ service.title }}
 					</h3>
 					<p class="">

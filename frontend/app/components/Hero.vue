@@ -24,12 +24,12 @@ defineProps({
 		<div
 			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10">
 			<h1
-				class="text-heading-4xl font-extrabold"
+				class="text-heading-3xl font-extrabold"
 				v-if="block.title">
 				{{ block.title }}
 			</h1>
 			<h2
-				class="text-heading-md font-medium"
+				class="text-heading-sm font-medium"
 				v-if="block.subtitle">
 				{{ block.subtitle }}
 			</h2>

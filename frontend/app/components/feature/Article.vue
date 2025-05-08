@@ -16,10 +16,10 @@ defineProps({
 			:src="article.cover.url"
 			:alt="article.cover.alternativeText || ''"
 			class="mb-4" />
-		<h3 class="text-heading-xs mb-2">
+		<h3 class="text-heading-xxs mb-2">
 			{{ article.title }}
 		</h3>
-		<p class="text-body-md line-clamp-2">
+		<p class="text-body-sm line-clamp-2">
 			{{ article.description }}
 		</p>
 	</NuxtLink>

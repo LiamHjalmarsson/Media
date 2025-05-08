@@ -499,7 +499,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
-    displayName: 'page';
+    description: '';
+    displayName: 'Page';
     pluralName: 'pages';
     singularName: 'page';
   };

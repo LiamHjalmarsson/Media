@@ -21,7 +21,7 @@ defineProps({
 			class="object-cover w-full h-full group-hover:opacity-30 transition-opacity duration-slow" />
 
 		<h3
-			class="text-heading-md font-semibold font-heading capitalize absolute opacity-0 group-hover:opacity-100 transition-opacity duration-slow text-secondary">
+			class="text-heading-sm font-semibold font-heading capitalize absolute opacity-0 group-hover:opacity-100 transition-opacity duration-slow text-secondary">
 			{{ project.title }}
 		</h3>
 	</NuxtLink>

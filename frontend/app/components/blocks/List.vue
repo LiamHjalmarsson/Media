@@ -21,7 +21,7 @@ defineProps({
 						class="mr-5 text-[96px] font-bold text-secondary">
 						{{ i + 1 }}
 					</span>
-					<h3 class="text-heading-md font-semibold">
+					<h3 class="text-heading-xs font-semibold">
 						{{ item.title }}
 					</h3>
 				</div>
