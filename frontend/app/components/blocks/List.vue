@@ -18,10 +18,10 @@ defineProps({
 				:key="item.id">
 				<div class="flex items-center font-heading">
 					<span
-						class="mr-5 text-[96px] font-bold text-secondary">
+						class="mr-10 text-[96px] font-bold text-secondary">
 						{{ i + 1 }}
 					</span>
-					<h3 class="text-heading-xs font-semibold">
+					<h3 class="text-heading-sm font-semibold">
 						{{ item.title }}
 					</h3>
 				</div>

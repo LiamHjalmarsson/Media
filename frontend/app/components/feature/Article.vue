@@ -15,8 +15,8 @@ defineProps({
 			provider="strapi"
 			:src="article.cover.url"
 			:alt="article.cover.alternativeText || ''"
-			class="mb-4" />
-		<h3 class="text-heading-xxs mb-2">
+			class="mb-5" />
+		<h3 class="text-heading-xxs mb-2.5">
 			{{ article.title }}
 		</h3>
 		<p class="text-body-sm line-clamp-2">

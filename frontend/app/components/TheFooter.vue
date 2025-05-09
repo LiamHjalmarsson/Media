@@ -4,32 +4,36 @@ const store = useGlobalStore();
 
 <template>
 	<footer class="bg-neutral text-neutral-white p-20">
-		<div class="mx-auto max-w-[1250px]">
-			<h3 class="text-heading-2xl font-semibold">
+		<div class="mx-auto max-w-screen-xl">
+			<h3
+				class="text-heading-lg font-semibold font-heading">
 				{{ store.footer.title }}
 			</h3>
 			<div class="w-fit mt-5">
 				<BaseButton to="about" label="Kontakta oss" />
 			</div>
 		</div>
-		<nav class="mx-auto max-w-[1250px] mt-20">
+		<nav class="mx-auto max-w-screen-xl mt-10">
 			<ul
 				class="flex w-full space-x-10 items-start justify-between">
 				<li
 					v-for="link in store.footer.footerColumn"
 					:key="link.label"
-					class="flex flex-col gap-5 font-heading text-heading-xxs">
-					<NuxtLink :to="link.path">
+					class="flex flex-col font-heading">
+					<NuxtLink
+						:to="link.path"
+						class="text-heading-xxs font-semibold">
 						{{ link.label }}
 					</NuxtLink>
 
-					<ul class="space-y-5">
+					<ul class="mt-5">
 						<li
 							v-for="subLink in link.links"
-							:key="subLink.id">
+							:key="subLink.id"
+							class="mb-5">
 							<NuxtLink
 								:to="link.path + '/' + subLink.path"
-								class="text-body-sm">
+								class="text-body-md">
 								{{ subLink.label }}
 							</NuxtLink>
 						</li>

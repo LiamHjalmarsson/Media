@@ -16,16 +16,16 @@ const toggleAnswer = (itemId) => {
 
 <template>
 	<BaseSection :title="block.title">
-		<ul class="space-y-10">
+		<ul>
 			<li
 				v-for="(faq, i) in block.items"
 				:key="faq.id"
-				class="border-b border-secondary pb-5 flex space-x-5"
+				class="border-b pb-5 flex space-x-10 mb-10"
 				role="button"
 				tabindex="0"
 				@click="toggleAnswer(faq.id)">
 				<span
-					class="text-heading-lg font-semibold font-heading">
+					class="text-heading-lg font-semibold font-heading text-secondary">
 					{{ i + 1 }}
 				</span>
 

@@ -22,7 +22,7 @@ defineProps({
 		</div>
 
 		<div
-			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10">
+			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10 max-w-screen-xl">
 			<h1
 				class="text-heading-3xl font-extrabold"
 				v-if="block.title">

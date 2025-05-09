@@ -64,9 +64,11 @@ export default {
 				center: true,
 				padding: {
 					DEFAULT: "1rem",
-					sm: "2rem",
+					sm: "1rem",
+					md: "2rem",
 					lg: "4rem",
 					xl: "5rem",
+					"2xl": "6rem",
 				},
 			},
 
@@ -77,16 +79,22 @@ export default {
 			},
 
 			boxShadow: {
-				DEFAULT: "0 2px 6px 0 rgba(35, 38, 39, 0.15)",
-				xs: "0 1px 4px 0 rgba(35, 38, 39, 0.05)",
-				sm: "0 2px 8px -2px rgba(35, 38, 39, 0.1)",
-				md: "0 4px 16px -4px rgba(35, 38, 39, 0.1)",
-				lg: "0 6px 24px -6px rgba(35, 38, 39, 0.08)",
-				xl: "0 8px 32px -8px rgba(35, 38, 39, 0.1)",
-				"2xl": "0 12px 40px -12px rgba(35, 38, 39, 0.1)",
+				DEFAULT: "0 4px 16px -4px rgba(35, 38, 39, 0.1)",
+				xs: "0 2px 4px 0 rgba(35, 38, 39, 0.06)",
+				sm: "0 4px 8px -2px rgba(35, 38, 39, 0.08)",
+				md: "0 6px 12px -4px rgba(35, 38, 39, 0.1)",
+				lg: "0 8px 16px -6px rgba(35, 38, 39, 0.12)",
+				xl: "0 12px 24px -8px rgba(35, 38, 39, 0.14)",
+				"2xl": "0 16px 32px -10px rgba(35, 38, 39, 0.16)",
 			},
 
-			screens: {},
+			screens: {
+				sm: "640px",
+				md: "768px",
+				lg: "1024px",
+				xl: "1280px",
+				"2xl": "1536px",
+			},
 		},
 	},
 	plugins: [],

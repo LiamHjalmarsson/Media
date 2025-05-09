@@ -14,7 +14,7 @@ defineProps({
 				:project="project"
 				v-for="project in block.projects"
 				:key="project.id"
-				class="flex-1 hover:flex-[2] duration-slow transition-all ease-out" />
+				class="flex-1 hover:flex-[2] duration-slow transition-all ease-in-out" />
 		</div>
 	</BaseSection>
 </template>

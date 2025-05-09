@@ -26,13 +26,13 @@ const imageUrl = computed(() =>
 		<div class="absolute w-full h-full bg-accent/90"></div>
 
 		<div
-			class="text-white relative z-10 max-w-[750px] text-center">
+			class="text-white relative z-10 max-w-screen-md text-center">
 			<h3
 				class="text-heading-2xl font-bold font-heading text-secondary mb-2.5">
 				{{ block.title }}
 			</h3>
 
-			<p class="text-body-lg">
+			<p class="text-body-lg font-medium">
 				{{ block.text }}
 			</p>
 		</div>

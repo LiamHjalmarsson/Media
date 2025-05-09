@@ -5,7 +5,7 @@ const isContact = (slug) => slug === "contact";
 </script>
 
 <template>
-	<nav>
+	<nav class="h-full flex">
 		<ul class="flex items-center space-x-5">
 			<li
 				v-for="link in store.header.links"
@@ -14,16 +14,16 @@ const isContact = (slug) => slug === "contact";
 				<NuxtLink
 					:to="link.path"
 					:class="[
-						'font-semibold text-lg px-4 py-2',
+						'font-semibold text-lg px-5 py-2.5',
 						isContact(link.path)
-							? ' bg-primary text-white rounded-full shadow-sm'
+							? ' bg-primary text-neutral-white rounded-full shadow hover:bg-primary-hover transition-colors duration'
 							: ' hover:text-primary',
 					]">
 					{{ link.label }}
 
 					<span
 						v-if="!isContact(link.path)"
-						class="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-slow"></span>
+						class="absolute left-0 bottom-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration"></span>
 				</NuxtLink>
 			</li>
 		</ul>

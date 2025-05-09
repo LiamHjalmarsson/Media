@@ -16,12 +16,12 @@ defineProps({
 					:name="service.icon"
 					class="text-heading-xl text-accent-light" />
 
-				<div class="">
+				<div>
 					<h3
 						class="text-heading-xs font-semibold mb-2.5 font-heading capitalize">
 						{{ service.title }}
 					</h3>
-					<p class="">
+					<p class="text-body-lg">
 						{{ service.description }}
 					</p>
 				</div>

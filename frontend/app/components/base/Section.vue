@@ -8,10 +8,10 @@ defineProps({
 
 <template>
 	<section class="px-10 py-32">
-		<div class="mx-auto max-w-[1250px]">
+		<div class="mx-auto max-w-screen-xl">
 			<h2
 				v-if="title"
-				class="text-heading-xl font-heading font-bold mb-5">
+				class="text-heading-xl font-heading font-bold mb-10">
 				{{ title }}
 			</h2>
 			<slot />

@@ -25,12 +25,12 @@ const toggleHandler = () => {};
 					{{ item.title }}
 				</h3>
 
-				<p>
+				<p class="text-body-lg">
 					{{ item.description }}
 				</p>
 
 				<button
-					class="px-4 py-2 text-primary font-semibold relative">
+					class="px-5 py-2.5 text-primary font-semibold relative">
 					Vad inngår
 
 					<span
