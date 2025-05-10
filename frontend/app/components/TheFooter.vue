@@ -3,10 +3,11 @@ const store = useGlobalStore();
 </script>
 
 <template>
-	<footer class="bg-neutral text-neutral-white p-20">
+	<footer
+		class="bg-neutral text-neutral-white p-5 md:p-10 lg:p-20">
 		<div class="mx-auto max-w-screen-xl">
 			<h3
-				class="text-heading-lg font-semibold font-heading">
+				class="text-heading-sm md:text-heading-md lg:text-heading-lg font-semibold font-heading">
 				{{ store.footer.title }}
 			</h3>
 			<div class="w-fit mt-5">
@@ -15,14 +16,14 @@ const store = useGlobalStore();
 		</div>
 		<nav class="mx-auto max-w-screen-xl mt-10">
 			<ul
-				class="flex w-full space-x-10 items-start justify-between">
+				class="grid md:grid-cols-2 lg:grid-cols-4 w-full items-start justify-between">
 				<li
 					v-for="link in store.footer.footerColumn"
 					:key="link.label"
-					class="flex flex-col font-heading">
+					class="flex flex-col font-heading mb-5 lg:mb-10">
 					<NuxtLink
 						:to="link.path"
-						class="text-heading-xxs font-semibold">
+						class="text-body-lg lg:text-heading-xxs font-semibold">
 						{{ link.label }}
 					</NuxtLink>
 

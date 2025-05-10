@@ -5,7 +5,7 @@ const isContact = (slug) => slug === "contact";
 </script>
 
 <template>
-	<nav class="h-full flex">
+	<nav class="h-full flex max-lg:hidden">
 		<ul class="flex items-center space-x-5">
 			<li
 				v-for="link in store.header.links"
