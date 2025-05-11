@@ -46,6 +46,6 @@ onBeforeUnmount(() => {
 			<TheHeaderMenu @click="toggleMenu" />
 		</div>
 
-		<TheHeaderMobileMenu v-if="isMenuOpen" />
+		<TheHeaderMobileMenu :isMenuOpen="isMenuOpen" />
 	</header>
 </template>
