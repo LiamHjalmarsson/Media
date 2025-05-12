@@ -2,14 +2,9 @@
 const store = useGlobalStore();
 
 const isScrolled = ref(false);
-const isMenuOpen = ref(false);
 
 const handleScroll = () => {
 	isScrolled.value = window.scrollY > 600;
-};
-
-const toggleMenu = () => {
-	isMenuOpen.value = !isMenuOpen.value;
 };
 
 onMounted(() => {
@@ -43,9 +38,7 @@ onBeforeUnmount(() => {
 
 			<TheHeaderNavigation />
 
-			<TheHeaderMenu @click="toggleMenu" />
+			<TheHeaderMenu />
 		</div>
-
-		<TheHeaderMobileMenu :isMenuOpen="isMenuOpen" />
 	</header>
 </template>
