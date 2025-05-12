@@ -32,11 +32,11 @@ const hero = computed(
 </script>
 
 <template>
-	<!-- <Hero :block="hero" />
+	<Hero :block="hero" />
 
 	<component
 		v-for="block in blocks"
 		:is="useBlockRenderer(block.__component)"
 		:block="block"
-		:key="block.id" /> -->
+		:key="block.id" />
 </template>

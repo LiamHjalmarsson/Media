@@ -22,14 +22,14 @@ defineProps({
 		</div>
 
 		<div
-			class="p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10 max-w-screen-xl">
+			class="p-5 md:p-10 lg:p-20 text-neutral-white text-center space-y-10 font-heading container relative z-10 max-w-screen-xl">
 			<h1
-				class="text-heading-3xl font-extrabold"
+				class="text-heading-sm sm:text-heading-lg md:text-heading-2xl lg:text-heading-3xl font-extrabold"
 				v-if="block.title">
 				{{ block.title }}
 			</h1>
 			<h2
-				class="text-heading-sm font-medium"
+				class="text-body-lg sm:text-body-xl md:text-heading-xs lg:text-heading-sm font-medium"
 				v-if="block.subtitle">
 				{{ block.subtitle }}
 			</h2>

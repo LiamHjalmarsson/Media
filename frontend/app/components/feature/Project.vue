@@ -10,7 +10,7 @@ defineProps({
 <template>
 	<NuxtLink
 		:to="`projects/${project.slug}`"
-		class="flex justify-center items-center group h-[400px] relative bg-accent">
+		class="flex justify-center items-center group h-[200px] md:h-[300px] lg:h-[400px] max-lg:min-w-[350px] relative bg-accent">
 		<NuxtImg
 			provider="strapi"
 			:src="project.cover?.url"

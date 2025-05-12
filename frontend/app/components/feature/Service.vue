@@ -11,7 +11,7 @@ defineProps({
 	<NuxtLink :to="'services/' + service.slug" class="flex">
 		<BaseCard>
 			<div
-				class="flex flex-col justify-between h-full space-y-10">
+				class="flex flex-col justify-between h-full space-y-5 lg:space-y-10">
 				<Icon
 					:name="service.icon"
 					class="text-heading-xl text-accent-light" />

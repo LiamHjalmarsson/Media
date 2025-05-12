@@ -10,7 +10,7 @@ defineProps({
 <template>
 	<NuxtLink
 		:to="`articles/${article.slug}`"
-		class="cursor-pointer group overflow-hidden">
+		class="cursor-pointer group overflow-hidden max-lg:min-w-[48%] flex-1">
 		<NuxtImg
 			provider="strapi"
 			:src="article.cover.url"

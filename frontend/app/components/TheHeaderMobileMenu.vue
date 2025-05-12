@@ -7,6 +7,8 @@ defineProps({
 		default: false,
 	},
 });
+
+const emit = defineEmits(["close-menu"]);
 </script>
 
 <template>
@@ -23,12 +25,13 @@ defineProps({
 			<ul
 				class="w-[85%] md:w-fit rounded-xl shadow-lg text-neutral flex flex-col transform-origin-top p-5 gap-2.5 border border-neutral/5 bg-neutral-white">
 				<li
-					v-for="(link, index) in store.header.links"
+					v-for="link in store.header.links"
 					:key="link.path"
-					class="transition-opacity duration-slow px-4 py-2">
+					class="transition-opacity duration-slow">
 					<NuxtLink
+						@click="emit('close-menu')"
 						:to="link.path"
-						class="block font-medium text-lg hover:text-primary text-center">
+						class="block font-medium text-lg hover:text-primary text-center px-4 py-2">
 						{{ link.label }}
 					</NuxtLink>
 				</li>

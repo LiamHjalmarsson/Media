@@ -25,7 +25,7 @@ const toggleAnswer = (itemId) => {
 				tabindex="0"
 				@click="toggleAnswer(faq.id)">
 				<span
-					class="text-heading-lg font-semibold font-heading text-secondary">
+					class="text-heading-xs sm:text-heading-sm md:text-heading-md lg:text-heading-lg font-semibold font-heading text-secondary">
 					{{ i + 1 }}
 				</span>
 
@@ -33,7 +33,7 @@ const toggleAnswer = (itemId) => {
 					<div
 						class="mb-5 flex justify-between items-center pr-5">
 						<h4
-							class="text-heading-xs font-medium font-heading">
+							class="text-body-md sm:text-body-lg md:text-body-xl lg:text-heading-xs font-medium font-heading">
 							{{ faq.question }}
 						</h4>
 						<Icon
@@ -45,7 +45,7 @@ const toggleAnswer = (itemId) => {
 					</div>
 					<p
 						v-if="activeItemId === faq.id"
-						class="text-body">
+						class="text-body text-body-xs sm:text-body-sm md:text-body-md lg:text-body-lg">
 						{{ faq.answer }}
 					</p>
 				</div>

@@ -19,7 +19,8 @@ defineProps({
 		v-if="to"
 		:to="to"
 		class="relative w-fit mx-auto h-14 group flex items-center px-8 cursor-pointer">
-		<span class="relative z-10 font-medium tracking-wide">
+		<span
+			class="relative z-10 font-medium tracking-wide text-body-sm md:text-body-md lg:text-body-lg">
 			{{ label }}
 		</span>
 

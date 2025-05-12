@@ -7,20 +7,20 @@ const store = useGlobalStore();
 		class="bg-neutral text-neutral-white p-5 md:p-10 lg:p-20">
 		<div class="mx-auto max-w-screen-xl">
 			<h3
-				class="text-heading-sm md:text-heading-md lg:text-heading-lg font-semibold font-heading">
+				class="text-heading-sm md:text-heading-md lg:text-heading-lg font-semibold font-heading max-lg:text-center">
 				{{ store.footer.title }}
 			</h3>
-			<div class="w-fit mt-5">
+			<div class="w-fit mt-5 max-lg:mx-auto">
 				<BaseButton to="about" label="Kontakta oss" />
 			</div>
 		</div>
 		<nav class="mx-auto max-w-screen-xl mt-10">
 			<ul
-				class="grid md:grid-cols-2 lg:grid-cols-4 w-full items-start justify-between">
+				class="grid md:grid-cols-2 lg:grid-cols-4 w-full lg:items-start lg:justify-between">
 				<li
 					v-for="link in store.footer.footerColumn"
 					:key="link.label"
-					class="flex flex-col font-heading mb-5 lg:mb-10">
+					class="flex flex-col font-heading mb-5 lg:mb-10 max-lg:text-center">
 					<NuxtLink
 						:to="link.path"
 						class="text-body-lg lg:text-heading-xxs font-semibold">

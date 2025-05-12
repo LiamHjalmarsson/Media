@@ -18,10 +18,10 @@ const toggleHandler = () => {};
 				class="flex-1 space-y-5 text-center flex flex-col justify-between items-center">
 				<Icon
 					:name="item.nuxtIcon"
-					class="text-[96px] text-accent-light" />
+					class="text-heading-3xl lg:text-[96px] text-accent-light" />
 
 				<h3
-					class="text-heading-sm font-heading font-semibold">
+					class="text-heading-xs lg:text-heading-sm font-heading font-semibold">
 					{{ item.title }}
 				</h3>
 
